@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxtjs/tailwindcss": "^6.12.1",
     "@tanstack/vue-query": "^5.56.2",
     "@tanstack/vue-query-devtools": "^5.56.2",
     "msw": "^2.4.9",

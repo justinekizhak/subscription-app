@@ -1,18 +1,29 @@
 <template>
-  <div>
-    <button>Add a new subscription</button>
-    <div>
-      <div>
+  <div class="px-8 bg-gray-100">
+    <button
+      class="bg-blue-600 w-full text-white items-center py-4 px-2 rounded-lg my-4"
+    >
+      Add a new subscription
+    </button>
+    <div class="">
+      <div class="flex justify-between items-center">
         <h2>My Subscriptions</h2>
         <span>></span>
       </div>
-      <div v-for="subs in subscriptions">
-        <img :src="subs.imageUrl" />
-        <div>
-          <h3>{{ subs.title }}</h3>
+      <div
+        v-for="subs in subscriptions"
+        class="flex my-6 rounded-2xl shadow-inner text-sm bg-white"
+      >
+        <img
+          :src="subs.imageUrl"
+          alt="subscription-service-logo"
+          class="w-32 h-32 object-cover rounded-2xl"
+        />
+        <div class="flex flex-col justify-between py-2 px-2">
+          <h3 class="text-base pt-2">{{ subs.title }}</h3>
         </div>
-        <div>
-          <span>{{ subs.cost }}</span>
+        <div class="flex flex-col justify-between w-16 ml-auto py-2">
+          <span>${{ subs.cost }}</span>
           <span>{{ subs.duration }}</span>
         </div>
       </div>
