@@ -1,18 +1,17 @@
 <template>
-  <div class="px-8 bg-gray-100">
+  <div class="bg-white text-base">
     <button
-      class="bg-blue-600 w-full text-white items-center py-4 px-2 rounded-lg my-4"
+      class="bg-blue-600 w-full text-white items-center py-4 px-2 rounded-lg my-4 text-sm"
     >
       Add a new subscription
     </button>
     <div class="">
       <div class="flex justify-between items-center">
-        <h2>My Subscriptions</h2>
-        <span>></span>
+        <h2 class="text-lg mt-6">My Subscriptions</h2>
       </div>
       <div
         v-for="subs in subscriptions"
-        class="flex my-6 rounded-2xl shadow-inner text-sm bg-white"
+        class="flex my-4 rounded-2xl text-sm bg-gray-100"
       >
         <img
           :src="subs.imageUrl"
