@@ -9,7 +9,17 @@
       <div class="flex justify-between items-center">
         <h2 class="text-lg mt-6">My Subscriptions</h2>
       </div>
+      <div v-if="isLoading" class="text-center mt-4">
+        <p>Loading...</p>
+      </div>
       <div
+        v-else-if="subscriptions && subscriptions.length === 0"
+        class="text-center mt-4"
+      >
+        <p>No subscriptions found</p>
+      </div>
+      <div
+        v-else
         v-for="subs in subscriptions"
         class="flex my-4 rounded-2xl text-sm bg-gray-100"
       >
@@ -35,7 +45,7 @@ import { useQuery } from "@tanstack/vue-query";
 import { z } from "zod";
 import { SubscriptionType } from "~/types";
 
-const { data: subscriptions } = useQuery({
+const { data: subscriptions = [], isLoading } = useQuery({
   queryKey: ["get-all-subscriptions"],
   queryFn: async () => {
     const response = await fetch("/api/subscriptions");
