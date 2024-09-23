@@ -17,6 +17,7 @@
     "nuxt": "^3.13.0",
     "nuxt-svgo-loader": "^0.4.1",
     "vue": "latest",
-    "vue-router": "latest"
+    "vue-router": "latest",
+    "zod": "^3.23.8"
   }
 }
