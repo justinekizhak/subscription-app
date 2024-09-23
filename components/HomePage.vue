@@ -32,14 +32,15 @@
 
 <script setup lang="ts">
 import { useQuery } from "@tanstack/vue-query";
-import type { Subscription } from "~/types";
+import { z } from "zod";
+import { SubscriptionType } from "~/types";
 
-const { data: subscriptions } = useQuery<Subscription[]>({
+const { data: subscriptions } = useQuery({
   queryKey: ["get-all-subscriptions"],
   queryFn: async () => {
     const response = await fetch("/api/subscriptions");
     const res = await response.json();
-    return res;
+    return z.array(SubscriptionType).parse(res);
   },
 });
 </script>

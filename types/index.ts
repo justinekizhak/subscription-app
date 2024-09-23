@@ -5,7 +5,7 @@ export const SubscriptionType = z.object({
   title: z.string(),
   cost: z.number(),
   duration: z.number(),
-  imageUrl: z.string(),
+  imageUrl: z.string().url().optional(),
 });
 
 export type Subscription = z.infer<typeof SubscriptionType>;
